@@ -1,13 +1,26 @@
 import { useState } from "react";
+import ListInterface from "../../interfaces/list"
 import "./Input.css";
 
 const Input = () => {
     const [input, setInput] = useState("")
     const [active, setButton] = useState([""])
 
+    const setLocal = (list: ListInterface[])=>{
+      localStorage.setItem("list", JSON.stringify([...list, {
+        text: input,
+        comleted: false,
+        id: list ? list.length + 1 : 0
+      }]))
+    }
+
     return (
     <div className="Input">
-      <form className={["add_list", ...active].join(" ")}>
+      <form className={["add_list", ...active].join(" ")} onSubmit={(e)=>{
+        e.preventDefault()
+        let list: ListInterface[] = (JSON.parse(localStorage.getItem("list") || "[]"))
+        setLocal(list)
+      }}>
         <input type="text" placeholder="What needs to be done?" value={input} onChange={(e)=>
         {
             setInput(e.target.value)

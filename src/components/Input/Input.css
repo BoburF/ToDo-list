@@ -21,7 +21,7 @@
 }
 
 .add_list.active{
-    box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.364);
 }
 
 .add_list button{
