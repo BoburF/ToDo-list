@@ -1,36 +1,58 @@
 .List {
-    width: 100%;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
 }
 
 .text {
-    font-size: 16px;
-    font-weight: 400;
-    text-transform: uppercase;
-    padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  overflow: scroll;
+  width: calc(100% - 50px);
+}
+
+.text::-webkit-scrollbar {
+  height: 10px;
+}
+
+.text::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.text::-webkit-scrollbar-thumb {
+  height: 10px;
+  border-radius: 10px;
+  background-color: #4285f4;
+}
+
+.text p {
+  white-space: nowrap;
 }
 
 .check {
-    width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .check_box {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    outline: none;
-    border: 1px solid #333;
-    border-radius: 50%;
-    -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  outline: none;
+  border: 1px solid #333;
+  border-radius: 50%;
+  -webkit-appearance: none;
 }
 
-.check_box.active{
-    background: url(../../../public/images/check.png) center;
-    background-size: 95%;
+.check_box.active {
+  background: url(../../../public/images/check.png) center;
+  background-size: 95%;
 }
