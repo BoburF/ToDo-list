@@ -1,5 +1,5 @@
 export default interface List{
     text: string,
-    comleted: boolean,
+    completed: boolean,
     id: number
 }

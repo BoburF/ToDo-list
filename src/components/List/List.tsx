@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import ListInterface from "../../interfaces/list"
 import "./List.css"
 
 const List = (props: {text: string, completed: boolean}) => {
