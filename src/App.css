@@ -42,7 +42,7 @@ body{
 
 .list::-webkit-scrollbar-track{
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, .7);
+  background-color: transparent;
 }
 
 .list::-webkit-scrollbar-thumb{
@@ -57,4 +57,26 @@ body{
 
 .list ul li{
   width: 100%;
+}
+
+.functions{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.function button{
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 2px #000;
+  font-family: 'Poppins', sans-serif;
+}
+
+.function button:active{
+  box-shadow: 0 0 5px #000;
 }

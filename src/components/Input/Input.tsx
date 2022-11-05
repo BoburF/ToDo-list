@@ -6,13 +6,19 @@ const Input = (props: {onSubmitHandler: any}) => {
     const [input, setInput] = useState("")
     const [active, setButton] = useState([""])
 
-    return (
-    <div className="Input">
-      <form className={["add_list", ...active].join(" ")} onSubmit={(e)=>{
+    const setLocalOnSubmit = (e: any)=>{
         e.preventDefault()
         let list: ListInterface[] = (JSON.parse(localStorage.getItem("list") || "[]"))
-        props.onSubmitHandler.setLocal(list, input)
-      }}>
+        if(input.length){
+          props.onSubmitHandler.setLocal(list, input)
+        }
+        setInput("")
+        setButton([""])
+    }
+    
+    return (
+    <div className="Input">
+      <form className={["add_list", ...active].join(" ")} onSubmit={(e)=>setLocalOnSubmit(e)}>
         <input type="text" placeholder="What needs to be done?" value={input} onChange={(e)=>
         {
             setInput(e.target.value)
